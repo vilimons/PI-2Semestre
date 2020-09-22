@@ -56,10 +56,11 @@ public class TelaCliente extends javax.swing.JFrame {
         cbxSexoCliente = new javax.swing.JComboBox<>();
         lblTelefoneCliente = new javax.swing.JLabel();
         formatTelefoneCliente = new javax.swing.JFormattedTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jFormattedTextField1 = new javax.swing.JFormattedTextField();
+        lblCelularCliente = new javax.swing.JLabel();
+        formatCelularCliente = new javax.swing.JFormattedTextField();
         panelSidebarTop = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
+        btnLimparCadastro = new javax.swing.JButton();
 
         jPasswordField1.setText("jPasswordField1");
 
@@ -138,11 +139,13 @@ public class TelaCliente extends javax.swing.JFrame {
         panelTabelaCliente.setLayout(panelTabelaClienteLayout);
         panelTabelaClienteLayout.setHorizontalGroup(
             panelTabelaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(spanelClientes, javax.swing.GroupLayout.DEFAULT_SIZE, 1283, Short.MAX_VALUE)
+            .addComponent(spanelClientes, javax.swing.GroupLayout.DEFAULT_SIZE, 1290, Short.MAX_VALUE)
         );
         panelTabelaClienteLayout.setVerticalGroup(
             panelTabelaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(spanelClientes, javax.swing.GroupLayout.DEFAULT_SIZE, 355, Short.MAX_VALUE)
+            .addGroup(panelTabelaClienteLayout.createSequentialGroup()
+                .addComponent(spanelClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 1, Short.MAX_VALUE))
         );
 
         btnCadastrar.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
@@ -211,17 +214,17 @@ public class TelaCliente extends javax.swing.JFrame {
         formatTelefoneCliente.setFont(new java.awt.Font("Courier New", 0, 12)); // NOI18N
         panelContainer.add(formatTelefoneCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 130, 130, 30));
 
-        jLabel1.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
-        jLabel1.setText("Celular:");
-        panelContainer.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 110, -1, -1));
+        lblCelularCliente.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        lblCelularCliente.setText("Celular:");
+        panelContainer.add(lblCelularCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 110, -1, -1));
 
         try {
-            jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) #-####-####")));
+            formatCelularCliente.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) #-####-####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        jFormattedTextField1.setFont(new java.awt.Font("Courier New", 0, 12)); // NOI18N
-        panelContainer.add(jFormattedTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 130, 170, 30));
+        formatCelularCliente.setFont(new java.awt.Font("Courier New", 0, 12)); // NOI18N
+        panelContainer.add(formatCelularCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 130, 170, 30));
 
         panelSidebarTop.setBackground(new java.awt.Color(15, 76, 117));
 
@@ -246,6 +249,14 @@ public class TelaCliente extends javax.swing.JFrame {
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
+        btnLimparCadastro.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        btnLimparCadastro.setText("Limpar");
+        btnLimparCadastro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimparCadastroActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelBgLayout = new javax.swing.GroupLayout(panelBg);
         panelBg.setLayout(panelBgLayout);
         panelBgLayout.setHorizontalGroup(
@@ -259,46 +270,50 @@ public class TelaCliente extends javax.swing.JFrame {
                         .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(50, 50, 50)
                         .addComponent(btnSalvar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 250, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnLimparCadastro)
+                        .addGap(40, 40, 40)
                         .addComponent(btnEditarCliente)
-                        .addGap(100, 100, 100)
+                        .addGap(40, 40, 40)
                         .addComponent(btnRemoverCliente)
-                        .addGap(100, 100, 100)
+                        .addGap(40, 40, 40)
                         .addComponent(btnCancelarCadastro)
                         .addGap(71, 71, 71))
                     .addGroup(panelBgLayout.createSequentialGroup()
                         .addGap(50, 50, 50)
-                        .addGroup(panelBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(panelContainer, javax.swing.GroupLayout.PREFERRED_SIZE, 1279, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(panelTabelaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 21, Short.MAX_VALUE)))
+                        .addComponent(panelContainer, javax.swing.GroupLayout.PREFERRED_SIZE, 1279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 56, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelBgLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(panelTabelaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
-        panelBgLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnCadastrar, btnCancelarCadastro, btnEditarCliente, btnRemoverCliente, btnSalvar});
+        panelBgLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnCadastrar, btnCancelarCadastro, btnEditarCliente, btnLimparCadastro, btnRemoverCliente, btnSalvar});
 
         panelBgLayout.setVerticalGroup(
             panelBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelBgLayout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(panelSidebarTop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(panelContainer, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(panelBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btnEditarCliente)
                         .addComponent(btnRemoverCliente)
-                        .addComponent(btnCancelarCadastro))
+                        .addComponent(btnCancelarCadastro)
+                        .addComponent(btnLimparCadastro))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnSalvar)))
-                .addGap(18, 18, 18)
-                .addComponent(panelTabelaCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addComponent(panelTabelaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(68, 68, 68))
         );
 
-        panelBgLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnCadastrar, btnCancelarCadastro, btnEditarCliente, btnRemoverCliente, btnSalvar});
+        panelBgLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnCadastrar, btnCancelarCadastro, btnEditarCliente, btnLimparCadastro, btnRemoverCliente, btnSalvar});
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -354,6 +369,24 @@ public class TelaCliente extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnRemoverClienteActionPerformed
 
+    private void btnLimparCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparCadastroActionPerformed
+        limparCadastro();
+    }//GEN-LAST:event_btnLimparCadastroActionPerformed
+    
+    
+    //Metodo para Limpar Cadastro Cliente
+    private void limparCadastro(){
+        txtIdCliente.setText("");
+        txtNomeCliente.setText("");
+        txtEnderecoCliente.setText("");
+        formatCpfCliente.setText("");
+        txtEmailCliente.setText("");
+        cbxSexoCliente.setSelectedIndex(0);
+        formatTelefoneCliente.setText("");
+        formatCelularCliente.setText("");
+    }
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -396,15 +429,16 @@ public class TelaCliente extends javax.swing.JFrame {
     private javax.swing.JButton btnCadastrar;
     private javax.swing.JButton btnCancelarCadastro;
     private javax.swing.JButton btnEditarCliente;
+    private javax.swing.JButton btnLimparCadastro;
     private javax.swing.JButton btnRemoverCliente;
     private javax.swing.JButton btnSalvar;
     private javax.swing.JComboBox<String> cbxSexoCliente;
+    private javax.swing.JFormattedTextField formatCelularCliente;
     private javax.swing.JFormattedTextField formatCpfCliente;
     private javax.swing.JFormattedTextField formatTelefoneCliente;
-    private javax.swing.JFormattedTextField jFormattedTextField1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JLabel lblCelularCliente;
     private javax.swing.JLabel lblCpfCliente;
     private javax.swing.JLabel lblEmailCliente;
     private javax.swing.JLabel lblEnderecoCliente;
