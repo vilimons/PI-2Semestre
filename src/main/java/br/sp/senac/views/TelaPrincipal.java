@@ -5,7 +5,7 @@
  */
 package br.sp.senac.views;
 
-import javax.swing.ImageIcon;
+
 
 /**
  *
@@ -68,7 +68,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         txtPesquisaProduto = new javax.swing.JTextField();
         btnPesquisaProduto = new javax.swing.JButton();
         sPaneListaVenda = new javax.swing.JScrollPane();
-        tableVendas = new javax.swing.JTable();
+        tbVendas = new javax.swing.JTable();
         panelTotal = new javax.swing.JPanel();
         lblTotal = new javax.swing.JLabel();
         lblRS = new javax.swing.JLabel();
@@ -279,22 +279,19 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         sPaneListaVenda.setFont(new java.awt.Font("Courier New", 0, 12)); // NOI18N
 
-        tableVendas.setBackground(new java.awt.Color(27, 38, 44));
-        tableVendas.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
-        tableVendas.setForeground(new java.awt.Color(190, 190, 190));
-        tableVendas.setModel(new javax.swing.table.DefaultTableModel(
+        tbVendas.setBackground(new java.awt.Color(27, 38, 44));
+        tbVendas.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
+        tbVendas.setForeground(new java.awt.Color(190, 190, 190));
+        tbVendas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                { new Integer(3454), "Casaco Couro", "Casaco couro M",  new Float(350.0),  new Float(350.0), null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {"14:58",  new Integer(3454), "Casaco Couro", "Casaco couro M", null, null}
             },
             new String [] {
-                "ID", "Nome Produto", "Descrição", "Valor Unitário", "Valor Total", "Horario"
+                "Horario", "ID", "Nome Produto", "Descrição", "Valor Unitário", "Valor Total"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class, java.lang.Float.class, java.lang.String.class
+                java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Double.class, java.lang.Double.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false, false
@@ -308,22 +305,36 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        tableVendas.setToolTipText("");
-        tableVendas.setGridColor(new java.awt.Color(51, 51, 51));
-        tableVendas.setName("tableVendas"); // NOI18N
-        tableVendas.setShowHorizontalLines(false);
-        tableVendas.setShowVerticalLines(false);
-        tableVendas.addComponentListener(new java.awt.event.ComponentAdapter() {
+        tbVendas.setToolTipText("");
+        tbVendas.setGridColor(new java.awt.Color(51, 51, 51));
+        tbVendas.setName("tbVendas"); // NOI18N
+        tbVendas.setShowHorizontalLines(false);
+        tbVendas.setShowVerticalLines(false);
+        tbVendas.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentResized(java.awt.event.ComponentEvent evt) {
-                tableVendasComponentResized(evt);
+                tbVendasComponentResized(evt);
             }
         });
-        tableVendas.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+        tbVendas.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                tableVendasPropertyChange(evt);
+                tbVendasPropertyChange(evt);
             }
         });
-        sPaneListaVenda.setViewportView(tableVendas);
+        sPaneListaVenda.setViewportView(tbVendas);
+        if (tbVendas.getColumnModel().getColumnCount() > 0) {
+            tbVendas.getColumnModel().getColumn(0).setResizable(false);
+            tbVendas.getColumnModel().getColumn(0).setPreferredWidth(20);
+            tbVendas.getColumnModel().getColumn(1).setResizable(false);
+            tbVendas.getColumnModel().getColumn(1).setPreferredWidth(5);
+            tbVendas.getColumnModel().getColumn(2).setResizable(false);
+            tbVendas.getColumnModel().getColumn(2).setPreferredWidth(180);
+            tbVendas.getColumnModel().getColumn(3).setResizable(false);
+            tbVendas.getColumnModel().getColumn(3).setPreferredWidth(180);
+            tbVendas.getColumnModel().getColumn(4).setResizable(false);
+            tbVendas.getColumnModel().getColumn(4).setPreferredWidth(30);
+            tbVendas.getColumnModel().getColumn(5).setResizable(false);
+            tbVendas.getColumnModel().getColumn(5).setPreferredWidth(30);
+        }
 
         javax.swing.GroupLayout panelTableLayout = new javax.swing.GroupLayout(panelTable);
         panelTable.setLayout(panelTableLayout);
@@ -490,13 +501,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tableVendasPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_tableVendasPropertyChange
+    private void tbVendasPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_tbVendasPropertyChange
 
-    }//GEN-LAST:event_tableVendasPropertyChange
+    }//GEN-LAST:event_tbVendasPropertyChange
 
-    private void tableVendasComponentResized(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_tableVendasComponentResized
+    private void tbVendasComponentResized(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_tbVendasComponentResized
 
-    }//GEN-LAST:event_tableVendasComponentResized
+    }//GEN-LAST:event_tbVendasComponentResized
 
     private void txtPesquisaProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPesquisaProdutoActionPerformed
         // TODO add your handling code here:
@@ -612,7 +623,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel panelTable;
     private javax.swing.JPanel panelTotal;
     private javax.swing.JScrollPane sPaneListaVenda;
-    private javax.swing.JTable tableVendas;
+    private javax.swing.JTable tbVendas;
     private javax.swing.JTextField txtPesquisaProduto;
     // End of variables declaration//GEN-END:variables
 }

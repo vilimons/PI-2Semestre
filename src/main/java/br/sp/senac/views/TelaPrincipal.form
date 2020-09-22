@@ -523,7 +523,7 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JTable" name="tableVendas">
+                    <Component class="javax.swing.JTable" name="tbVendas">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="2c" green="26" red="1b" type="rgb"/>
@@ -535,51 +535,71 @@
                           <Color blue="be" green="be" red="be" type="rgb"/>
                         </Property>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="6" rowCount="4">
+                          <Table columnCount="6" rowCount="1">
+                            <Column editable="false" title="Horario" type="java.lang.String">
+                              <Data value="14:58"/>
+                            </Column>
                             <Column editable="false" title="ID" type="java.lang.Integer">
                               <Data value="3454"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
                             </Column>
                             <Column editable="false" title="Nome Produto" type="java.lang.String">
                               <Data value="Casaco Couro"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
                             </Column>
                             <Column editable="false" title="Descri&#xe7;&#xe3;o" type="java.lang.String">
                               <Data value="Casaco couro M"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
                             </Column>
-                            <Column editable="false" title="Valor Unit&#xe1;rio" type="java.lang.Float">
-                              <Data value="350.0"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                            </Column>
-                            <Column editable="false" title="Valor Total" type="java.lang.Float">
-                              <Data value="350.0"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                            </Column>
-                            <Column editable="false" title="Horario" type="java.lang.String"/>
+                            <Column editable="false" title="Valor Unit&#xe1;rio" type="java.lang.Double"/>
+                            <Column editable="false" title="Valor Total" type="java.lang.Double"/>
                           </Table>
                         </Property>
                         <Property name="toolTipText" type="java.lang.String" value=""/>
+                        <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                          <TableColumnModel selectionModel="0">
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="20" resizable="false">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="5" resizable="false">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="180" resizable="false">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="180" resizable="false">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="30" resizable="false">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="30" resizable="false">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                          </TableColumnModel>
+                        </Property>
                         <Property name="gridColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="33" green="33" red="33" type="rgb"/>
                         </Property>
-                        <Property name="name" type="java.lang.String" value="tableVendas" noResource="true"/>
+                        <Property name="name" type="java.lang.String" value="tbVendas" noResource="true"/>
                         <Property name="showHorizontalLines" type="boolean" value="false"/>
                         <Property name="showVerticalLines" type="boolean" value="false"/>
+                        <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                          <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                        </Property>
                       </Properties>
                       <Events>
-                        <EventHandler event="componentResized" listener="java.awt.event.ComponentListener" parameters="java.awt.event.ComponentEvent" handler="tableVendasComponentResized"/>
-                        <EventHandler event="propertyChange" listener="java.beans.PropertyChangeListener" parameters="java.beans.PropertyChangeEvent" handler="tableVendasPropertyChange"/>
+                        <EventHandler event="componentResized" listener="java.awt.event.ComponentListener" parameters="java.awt.event.ComponentEvent" handler="tbVendasComponentResized"/>
+                        <EventHandler event="propertyChange" listener="java.beans.PropertyChangeListener" parameters="java.beans.PropertyChangeEvent" handler="tbVendasPropertyChange"/>
                       </Events>
                     </Component>
                   </SubComponents>

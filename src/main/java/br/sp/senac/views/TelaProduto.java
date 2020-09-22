@@ -166,17 +166,17 @@ public class TelaProduto extends javax.swing.JFrame {
 
         panelTabelaProdutos.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(15, 76, 117), 1, true));
 
-        tbProdutos.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
+        tbProdutos.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
         tbProdutos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID", "Nome", "Tipo", "Descrição", "Valor"
+                "ID", "Nome", "Descrição", "Tipo", "Valor"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Double.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false
@@ -193,6 +193,18 @@ public class TelaProduto extends javax.swing.JFrame {
         tbProdutos.setToolTipText("Tabela Produtos");
         tbProdutos.setShowHorizontalLines(false);
         spanelProdutos.setViewportView(tbProdutos);
+        if (tbProdutos.getColumnModel().getColumnCount() > 0) {
+            tbProdutos.getColumnModel().getColumn(0).setResizable(false);
+            tbProdutos.getColumnModel().getColumn(0).setPreferredWidth(5);
+            tbProdutos.getColumnModel().getColumn(1).setResizable(false);
+            tbProdutos.getColumnModel().getColumn(1).setPreferredWidth(200);
+            tbProdutos.getColumnModel().getColumn(2).setResizable(false);
+            tbProdutos.getColumnModel().getColumn(2).setPreferredWidth(200);
+            tbProdutos.getColumnModel().getColumn(3).setResizable(false);
+            tbProdutos.getColumnModel().getColumn(3).setPreferredWidth(20);
+            tbProdutos.getColumnModel().getColumn(4).setResizable(false);
+            tbProdutos.getColumnModel().getColumn(4).setPreferredWidth(20);
+        }
         tbProdutos.getAccessibleContext().setAccessibleDescription("");
 
         javax.swing.GroupLayout panelTabelaProdutosLayout = new javax.swing.GroupLayout(panelTabelaProdutos);
@@ -211,6 +223,11 @@ public class TelaProduto extends javax.swing.JFrame {
 
         btnRemoverProduto.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         btnRemoverProduto.setText("Remover");
+        btnRemoverProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRemoverProdutoActionPerformed(evt);
+            }
+        });
 
         btnEditarProduto.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         btnEditarProduto.setText("Editar");
@@ -302,13 +319,13 @@ public class TelaProduto extends javax.swing.JFrame {
         if (cbxTipoProduto.getSelectedIndex() == 0) {
             JOptionPane.showMessageDialog(this, "Selecione um tipo de produto! ", "Aviso", JOptionPane.WARNING_MESSAGE);
         }
-
-        DefaultTableModel dtmCarrinho = (DefaultTableModel) tbProdutos.getModel();
-        dtmCarrinho.addRow(new Object[]{
+        
+        DefaultTableModel dtmProdutos = (DefaultTableModel) tbProdutos.getModel();
+        dtmProdutos.addRow(new Object[]{
             idProduto,
             nomeProduto,
-            cbxTipoProduto.getSelectedItem().toString(),
             descricaoProduto,
+            cbxTipoProduto.getSelectedItem().toString(),
             valorProduto,
 
         });
@@ -348,6 +365,17 @@ public class TelaProduto extends javax.swing.JFrame {
     private void btnCancelarCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarCadastroActionPerformed
         System.exit(0);
     }//GEN-LAST:event_btnCancelarCadastroActionPerformed
+
+    private void btnRemoverProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverProdutoActionPerformed
+           
+        DefaultTableModel dtmProdutos = (DefaultTableModel)tbProdutos.getModel();
+        if (tbProdutos.getSelectedRow() >= 0){
+            dtmProdutos.removeRow(tbProdutos.getSelectedRow());
+            tbProdutos.setModel(dtmProdutos);
+        }else{
+            JOptionPane.showMessageDialog(null, "Favor selecionar uma linha");
+        }
+    }//GEN-LAST:event_btnRemoverProdutoActionPerformed
 
     /**
      * @param args the command line arguments

@@ -5,6 +5,9 @@
  */
 package br.sp.senac.views;
 
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author sKm
@@ -43,8 +46,8 @@ public class TelaCliente extends javax.swing.JFrame {
         txtIdCliente = new javax.swing.JTextField();
         lblNomeCliente = new javax.swing.JLabel();
         txtNomeCliente = new javax.swing.JTextField();
-        lblDescricaoProduto = new javax.swing.JLabel();
-        txtDescricaoCliente = new javax.swing.JTextField();
+        lblEnderecoCliente = new javax.swing.JLabel();
+        txtEnderecoCliente = new javax.swing.JTextField();
         lblCpfCliente = new javax.swing.JLabel();
         formatCpfCliente = new javax.swing.JFormattedTextField();
         lblEmailCliente = new javax.swing.JLabel();
@@ -52,7 +55,9 @@ public class TelaCliente extends javax.swing.JFrame {
         lblSexoCliente = new javax.swing.JLabel();
         cbxSexoCliente = new javax.swing.JComboBox<>();
         lblTelefoneCliente = new javax.swing.JLabel();
-        txtTelefoneCliente = new javax.swing.JTextField();
+        formatTelefoneCliente = new javax.swing.JFormattedTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jFormattedTextField1 = new javax.swing.JFormattedTextField();
         panelSidebarTop = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
 
@@ -75,6 +80,11 @@ public class TelaCliente extends javax.swing.JFrame {
 
         btnRemoverCliente.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         btnRemoverCliente.setText("Remover");
+        btnRemoverCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRemoverClienteActionPerformed(evt);
+            }
+        });
 
         btnSalvar.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         btnSalvar.setText("Salvar");
@@ -82,7 +92,7 @@ public class TelaCliente extends javax.swing.JFrame {
         panelTabelaCliente.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(15, 76, 117), 1, true));
 
         tbClientes.setBackground(new java.awt.Color(27, 38, 44));
-        tbClientes.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
+        tbClientes.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
         tbClientes.setForeground(new java.awt.Color(190, 190, 190));
         tbClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -113,21 +123,15 @@ public class TelaCliente extends javax.swing.JFrame {
         if (tbClientes.getColumnModel().getColumnCount() > 0) {
             tbClientes.getColumnModel().getColumn(0).setResizable(false);
             tbClientes.getColumnModel().getColumn(0).setPreferredWidth(5);
-            tbClientes.getColumnModel().getColumn(0).setHeaderValue("ID");
             tbClientes.getColumnModel().getColumn(1).setResizable(false);
             tbClientes.getColumnModel().getColumn(1).setPreferredWidth(25);
-            tbClientes.getColumnModel().getColumn(1).setHeaderValue("Nome");
             tbClientes.getColumnModel().getColumn(2).setResizable(false);
             tbClientes.getColumnModel().getColumn(2).setPreferredWidth(15);
-            tbClientes.getColumnModel().getColumn(2).setHeaderValue("CPF");
             tbClientes.getColumnModel().getColumn(3).setResizable(false);
             tbClientes.getColumnModel().getColumn(3).setPreferredWidth(25);
-            tbClientes.getColumnModel().getColumn(3).setHeaderValue("Endereço");
             tbClientes.getColumnModel().getColumn(4).setResizable(false);
-            tbClientes.getColumnModel().getColumn(4).setHeaderValue("Email");
             tbClientes.getColumnModel().getColumn(5).setResizable(false);
             tbClientes.getColumnModel().getColumn(5).setPreferredWidth(15);
-            tbClientes.getColumnModel().getColumn(5).setHeaderValue("Telefone");
         }
 
         javax.swing.GroupLayout panelTabelaClienteLayout = new javax.swing.GroupLayout(panelTabelaCliente);
@@ -166,14 +170,20 @@ public class TelaCliente extends javax.swing.JFrame {
         txtNomeCliente.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
         panelContainer.add(txtNomeCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(323, 40, 335, 30));
 
-        lblDescricaoProduto.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
-        lblDescricaoProduto.setText("Endereço:");
-        panelContainer.add(lblDescricaoProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 20, -1, -1));
-        panelContainer.add(txtDescricaoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 40, 550, 30));
+        lblEnderecoCliente.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        lblEnderecoCliente.setText("Endereço:");
+        panelContainer.add(lblEnderecoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 20, -1, -1));
+        panelContainer.add(txtEnderecoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 40, 550, 30));
 
         lblCpfCliente.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
         lblCpfCliente.setText("CPF:");
         panelContainer.add(lblCpfCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, -1, -1));
+
+        try {
+            formatCpfCliente.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
         panelContainer.add(formatCpfCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 240, 30));
 
         lblEmailCliente.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
@@ -192,7 +202,26 @@ public class TelaCliente extends javax.swing.JFrame {
         lblTelefoneCliente.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
         lblTelefoneCliente.setText("Telefone:");
         panelContainer.add(lblTelefoneCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 110, -1, -1));
-        panelContainer.add(txtTelefoneCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 130, 240, 30));
+
+        try {
+            formatTelefoneCliente.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) ####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        formatTelefoneCliente.setFont(new java.awt.Font("Courier New", 0, 12)); // NOI18N
+        panelContainer.add(formatTelefoneCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 130, 130, 30));
+
+        jLabel1.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        jLabel1.setText("Celular:");
+        panelContainer.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 110, -1, -1));
+
+        try {
+            jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) #-####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jFormattedTextField1.setFont(new java.awt.Font("Courier New", 0, 12)); // NOI18N
+        panelContainer.add(jFormattedTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 130, 170, 30));
 
         panelSidebarTop.setBackground(new java.awt.Color(15, 76, 117));
 
@@ -286,12 +315,44 @@ public class TelaCliente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
-       
+       String idCliente = txtIdCliente.getText();
+        String nomeCliente = txtNomeCliente.getText();
+        String enderecoCliente = txtEnderecoCliente.getText();
+        String cpfCliente = formatCpfCliente.getText();
+        String emailCliente = txtEmailCliente.getText();
+        String telCliente = formatTelefoneCliente.getText();
+        
+        
+
+        if (cbxSexoCliente.getSelectedIndex() == 0) {
+            JOptionPane.showMessageDialog(this, "Selecione o sexo do cliente! ", "Aviso", JOptionPane.WARNING_MESSAGE);
+        }
+        
+        DefaultTableModel dtmClientes = (DefaultTableModel) tbClientes.getModel();
+        dtmClientes.addRow(new Object[]{
+            idCliente,
+            nomeCliente,
+            cpfCliente,
+            enderecoCliente,  
+            emailCliente,   
+            telCliente, 
+        });
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
     private void btnCancelarCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarCadastroActionPerformed
         System.exit(0);
     }//GEN-LAST:event_btnCancelarCadastroActionPerformed
+
+    private void btnRemoverClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverClienteActionPerformed
+    
+        DefaultTableModel dtmClientes = (DefaultTableModel)tbClientes.getModel();
+        if (tbClientes.getSelectedRow() >= 0){
+            dtmClientes.removeRow(tbClientes.getSelectedRow());
+            tbClientes.setModel(dtmClientes);
+        }else{
+            JOptionPane.showMessageDialog(null, "Favor selecionar uma linha");
+        }
+    }//GEN-LAST:event_btnRemoverClienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -339,11 +400,14 @@ public class TelaCliente extends javax.swing.JFrame {
     private javax.swing.JButton btnSalvar;
     private javax.swing.JComboBox<String> cbxSexoCliente;
     private javax.swing.JFormattedTextField formatCpfCliente;
+    private javax.swing.JFormattedTextField formatTelefoneCliente;
+    private javax.swing.JFormattedTextField jFormattedTextField1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JLabel lblCpfCliente;
-    private javax.swing.JLabel lblDescricaoProduto;
     private javax.swing.JLabel lblEmailCliente;
+    private javax.swing.JLabel lblEnderecoCliente;
     private javax.swing.JLabel lblID;
     private javax.swing.JLabel lblNomeCliente;
     private javax.swing.JLabel lblSexoCliente;
@@ -354,10 +418,9 @@ public class TelaCliente extends javax.swing.JFrame {
     private javax.swing.JPanel panelTabelaCliente;
     private javax.swing.JScrollPane spanelClientes;
     private javax.swing.JTable tbClientes;
-    private javax.swing.JTextField txtDescricaoCliente;
     private javax.swing.JTextField txtEmailCliente;
+    private javax.swing.JTextField txtEnderecoCliente;
     private javax.swing.JTextField txtIdCliente;
     private javax.swing.JTextField txtNomeCliente;
-    private javax.swing.JTextField txtTelefoneCliente;
     // End of variables declaration//GEN-END:variables
 }
