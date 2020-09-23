@@ -33,14 +33,12 @@ public class TelaCliente extends javax.swing.JFrame {
 
         jPasswordField1 = new javax.swing.JPasswordField();
         panelBg = new javax.swing.JPanel();
-        btnCancelarCadastro = new javax.swing.JButton();
-        btnEditarCliente = new javax.swing.JButton();
-        btnRemoverCliente = new javax.swing.JButton();
-        btnSalvar = new javax.swing.JButton();
-        panelTabelaCliente = new javax.swing.JPanel();
-        spanelClientes = new javax.swing.JScrollPane();
-        tbClientes = new javax.swing.JTable();
-        btnCadastrar = new javax.swing.JButton();
+        panelSidebarTop = new javax.swing.JPanel();
+        panelLogoProduto = new javax.swing.JPanel();
+        lblLojaRoupaLogoProduto = new javax.swing.JLabel();
+        lblLineProduto = new javax.swing.JLabel();
+        panelLineFullLogoProduto = new javax.swing.JPanel();
+        lblCadastroCliente = new javax.swing.JLabel();
         panelContainer = new javax.swing.JPanel();
         lblID = new javax.swing.JLabel();
         txtIdCliente = new javax.swing.JTextField();
@@ -58,9 +56,18 @@ public class TelaCliente extends javax.swing.JFrame {
         formatTelefoneCliente = new javax.swing.JFormattedTextField();
         lblCelularCliente = new javax.swing.JLabel();
         formatCelularCliente = new javax.swing.JFormattedTextField();
-        panelSidebarTop = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
+        separadorBotoesUp = new javax.swing.JSeparator();
+        panelBotoesCliente = new javax.swing.JPanel();
+        btnCancelarCadastro = new javax.swing.JButton();
+        btnRemoverCliente = new javax.swing.JButton();
+        btnCadastrar = new javax.swing.JButton();
+        btnEditarCliente = new javax.swing.JButton();
+        btnSalvar = new javax.swing.JButton();
         btnLimparCadastro = new javax.swing.JButton();
+        separadorBotoesDown = new javax.swing.JSeparator();
+        panelTabelaCliente = new javax.swing.JPanel();
+        spanelClientes = new javax.swing.JScrollPane();
+        tbClientes = new javax.swing.JTable();
 
         jPasswordField1.setText("jPasswordField1");
 
@@ -68,7 +75,155 @@ public class TelaCliente extends javax.swing.JFrame {
         setTitle("Cadastrar Cliente");
         setResizable(false);
 
+        panelSidebarTop.setBackground(new java.awt.Color(15, 76, 117));
+
+        panelLogoProduto.setBackground(new java.awt.Color(15, 76, 117));
+        panelLogoProduto.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(190, 176, 40), 1, true));
+        panelLogoProduto.setForeground(new java.awt.Color(190, 176, 40));
+        panelLogoProduto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblLojaRoupaLogoProduto.setFont(new java.awt.Font("Old English Text MT", 1, 48)); // NOI18N
+        lblLojaRoupaLogoProduto.setForeground(new java.awt.Color(190, 176, 40));
+        lblLojaRoupaLogoProduto.setText("Loja-Roupa");
+        panelLogoProduto.add(lblLojaRoupaLogoProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 290, 41));
+
+        lblLineProduto.setBackground(new java.awt.Color(190, 190, 190));
+        lblLineProduto.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lblLineProduto.setForeground(new java.awt.Color(190, 176, 40));
+        lblLineProduto.setText("____________________________________");
+        panelLogoProduto.add(lblLineProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 300, -1));
+
+        panelLineFullLogoProduto.setBackground(new java.awt.Color(190, 176, 40));
+
+        javax.swing.GroupLayout panelLineFullLogoProdutoLayout = new javax.swing.GroupLayout(panelLineFullLogoProduto);
+        panelLineFullLogoProduto.setLayout(panelLineFullLogoProdutoLayout);
+        panelLineFullLogoProdutoLayout.setHorizontalGroup(
+            panelLineFullLogoProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 290, Short.MAX_VALUE)
+        );
+        panelLineFullLogoProdutoLayout.setVerticalGroup(
+            panelLineFullLogoProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 10, Short.MAX_VALUE)
+        );
+
+        panelLogoProduto.add(panelLineFullLogoProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 290, 10));
+
+        lblCadastroCliente.setFont(new java.awt.Font("Courier New", 1, 36)); // NOI18N
+        lblCadastroCliente.setForeground(new java.awt.Color(255, 255, 255));
+        lblCadastroCliente.setText("Cadastro de Cliente");
+
+        javax.swing.GroupLayout panelSidebarTopLayout = new javax.swing.GroupLayout(panelSidebarTop);
+        panelSidebarTop.setLayout(panelSidebarTopLayout);
+        panelSidebarTopLayout.setHorizontalGroup(
+            panelSidebarTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelSidebarTopLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(panelLogoProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblCadastroCliente)
+                .addGap(50, 50, 50))
+        );
+        panelSidebarTopLayout.setVerticalGroup(
+            panelSidebarTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelSidebarTopLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addGroup(panelSidebarTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(panelLogoProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblCadastroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15))
+        );
+
+        panelContainer.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(15, 76, 117), 1, true));
+        panelContainer.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblID.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        lblID.setForeground(new java.awt.Color(27, 38, 44));
+        lblID.setText("ID:");
+        panelContainer.add(lblID, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 19, -1, -1));
+
+        txtIdCliente.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
+        txtIdCliente.setForeground(new java.awt.Color(27, 38, 44));
+        panelContainer.add(txtIdCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 40, 254, 30));
+
+        lblNomeCliente.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        lblNomeCliente.setForeground(new java.awt.Color(27, 38, 44));
+        lblNomeCliente.setText("Nome:");
+        panelContainer.add(lblNomeCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(323, 19, -1, -1));
+
+        txtNomeCliente.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
+        txtNomeCliente.setForeground(new java.awt.Color(27, 38, 44));
+        panelContainer.add(txtNomeCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(323, 40, 335, 30));
+
+        lblEnderecoCliente.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        lblEnderecoCliente.setForeground(new java.awt.Color(27, 38, 44));
+        lblEnderecoCliente.setText("Endereço:");
+        panelContainer.add(lblEnderecoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 20, -1, -1));
+
+        txtEnderecoCliente.setForeground(new java.awt.Color(27, 38, 44));
+        panelContainer.add(txtEnderecoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 40, 550, 30));
+
+        lblCpfCliente.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        lblCpfCliente.setForeground(new java.awt.Color(27, 38, 44));
+        lblCpfCliente.setText("CPF:*");
+        panelContainer.add(lblCpfCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, -1, -1));
+
+        formatCpfCliente.setForeground(new java.awt.Color(27, 38, 44));
+        try {
+            formatCpfCliente.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        panelContainer.add(formatCpfCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 240, 30));
+
+        lblEmailCliente.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        lblEmailCliente.setForeground(new java.awt.Color(27, 38, 44));
+        lblEmailCliente.setText("Email:");
+        panelContainer.add(lblEmailCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, -1, -1));
+
+        txtEmailCliente.setForeground(new java.awt.Color(27, 38, 44));
+        panelContainer.add(txtEmailCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 130, 330, 30));
+
+        lblSexoCliente.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        lblSexoCliente.setForeground(new java.awt.Color(27, 38, 44));
+        lblSexoCliente.setText("Sexo:*");
+        panelContainer.add(lblSexoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 110, -1, -1));
+
+        cbxSexoCliente.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
+        cbxSexoCliente.setForeground(new java.awt.Color(27, 38, 44));
+        cbxSexoCliente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione um gênero", "Masculino", "Feminino", "Outros", " " }));
+        panelContainer.add(cbxSexoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 130, 190, 30));
+
+        lblTelefoneCliente.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        lblTelefoneCliente.setForeground(new java.awt.Color(27, 38, 44));
+        lblTelefoneCliente.setText("Telefone:");
+        panelContainer.add(lblTelefoneCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 110, -1, -1));
+
+        formatTelefoneCliente.setForeground(new java.awt.Color(27, 38, 44));
+        try {
+            formatTelefoneCliente.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) ####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        formatTelefoneCliente.setFont(new java.awt.Font("Courier New", 0, 12)); // NOI18N
+        panelContainer.add(formatTelefoneCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 130, 130, 30));
+
+        lblCelularCliente.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        lblCelularCliente.setForeground(new java.awt.Color(27, 38, 44));
+        lblCelularCliente.setText("Celular:");
+        panelContainer.add(lblCelularCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 110, -1, -1));
+
+        formatCelularCliente.setForeground(new java.awt.Color(27, 38, 44));
+        try {
+            formatCelularCliente.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) #-####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        formatCelularCliente.setFont(new java.awt.Font("Courier New", 0, 12)); // NOI18N
+        panelContainer.add(formatCelularCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 130, 170, 30));
+
         btnCancelarCadastro.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        btnCancelarCadastro.setForeground(new java.awt.Color(27, 38, 44));
+        btnCancelarCadastro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_cancel_24px.png"))); // NOI18N
         btnCancelarCadastro.setText("Cancelar");
         btnCancelarCadastro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,10 +231,9 @@ public class TelaCliente extends javax.swing.JFrame {
             }
         });
 
-        btnEditarCliente.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
-        btnEditarCliente.setText("Editar");
-
         btnRemoverCliente.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        btnRemoverCliente.setForeground(new java.awt.Color(27, 38, 44));
+        btnRemoverCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_trash_24px.png"))); // NOI18N
         btnRemoverCliente.setText("Remover");
         btnRemoverCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,8 +241,77 @@ public class TelaCliente extends javax.swing.JFrame {
             }
         });
 
+        btnCadastrar.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        btnCadastrar.setForeground(new java.awt.Color(27, 38, 44));
+        btnCadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_registration_24px.png"))); // NOI18N
+        btnCadastrar.setText("Cadastrar");
+        btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadastrarActionPerformed(evt);
+            }
+        });
+
+        btnEditarCliente.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        btnEditarCliente.setForeground(new java.awt.Color(27, 38, 44));
+        btnEditarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_edit_24px.png"))); // NOI18N
+        btnEditarCliente.setText("Editar");
+
         btnSalvar.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        btnSalvar.setForeground(new java.awt.Color(27, 38, 44));
+        btnSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_save_24px.png"))); // NOI18N
         btnSalvar.setText("Salvar");
+        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvarActionPerformed(evt);
+            }
+        });
+
+        btnLimparCadastro.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        btnLimparCadastro.setForeground(new java.awt.Color(27, 38, 44));
+        btnLimparCadastro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_broom_24px.png"))); // NOI18N
+        btnLimparCadastro.setText("Limpar");
+        btnLimparCadastro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimparCadastroActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelBotoesClienteLayout = new javax.swing.GroupLayout(panelBotoesCliente);
+        panelBotoesCliente.setLayout(panelBotoesClienteLayout);
+        panelBotoesClienteLayout.setHorizontalGroup(
+            panelBotoesClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelBotoesClienteLayout.createSequentialGroup()
+                .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
+                .addComponent(btnSalvar)
+                .addGap(259, 259, 259)
+                .addComponent(btnLimparCadastro)
+                .addGap(40, 40, 40)
+                .addComponent(btnEditarCliente)
+                .addGap(40, 40, 40)
+                .addComponent(btnRemoverCliente)
+                .addGap(40, 40, 40)
+                .addComponent(btnCancelarCadastro))
+        );
+
+        panelBotoesClienteLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnCadastrar, btnCancelarCadastro, btnEditarCliente, btnLimparCadastro, btnRemoverCliente, btnSalvar});
+
+        panelBotoesClienteLayout.setVerticalGroup(
+            panelBotoesClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelBotoesClienteLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelBotoesClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSalvar)
+                    .addGroup(panelBotoesClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnEditarCliente)
+                        .addComponent(btnRemoverCliente)
+                        .addComponent(btnCancelarCadastro)
+                        .addComponent(btnLimparCadastro)))
+                .addContainerGap())
+        );
+
+        panelBotoesClienteLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnCadastrar, btnCancelarCadastro, btnEditarCliente, btnLimparCadastro, btnRemoverCliente, btnSalvar});
 
         panelTabelaCliente.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(15, 76, 117), 1, true));
 
@@ -139,7 +362,9 @@ public class TelaCliente extends javax.swing.JFrame {
         panelTabelaCliente.setLayout(panelTabelaClienteLayout);
         panelTabelaClienteLayout.setHorizontalGroup(
             panelTabelaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(spanelClientes, javax.swing.GroupLayout.DEFAULT_SIZE, 1290, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTabelaClienteLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(spanelClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 1302, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         panelTabelaClienteLayout.setVerticalGroup(
             panelTabelaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -148,172 +373,37 @@ public class TelaCliente extends javax.swing.JFrame {
                 .addGap(0, 1, Short.MAX_VALUE))
         );
 
-        btnCadastrar.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
-        btnCadastrar.setText("Cadastrar");
-        btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCadastrarActionPerformed(evt);
-            }
-        });
-
-        panelContainer.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(15, 76, 117), 1, true));
-        panelContainer.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        lblID.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
-        lblID.setText("ID:");
-        panelContainer.add(lblID, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 19, -1, -1));
-
-        txtIdCliente.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
-        panelContainer.add(txtIdCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 40, 254, 30));
-
-        lblNomeCliente.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
-        lblNomeCliente.setText("Nome:");
-        panelContainer.add(lblNomeCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(323, 19, -1, -1));
-
-        txtNomeCliente.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
-        panelContainer.add(txtNomeCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(323, 40, 335, 30));
-
-        lblEnderecoCliente.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
-        lblEnderecoCliente.setText("Endereço:");
-        panelContainer.add(lblEnderecoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 20, -1, -1));
-        panelContainer.add(txtEnderecoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 40, 550, 30));
-
-        lblCpfCliente.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
-        lblCpfCliente.setText("CPF:");
-        panelContainer.add(lblCpfCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, -1, -1));
-
-        try {
-            formatCpfCliente.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        panelContainer.add(formatCpfCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 240, 30));
-
-        lblEmailCliente.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
-        lblEmailCliente.setText("Email:");
-        panelContainer.add(lblEmailCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, -1, -1));
-        panelContainer.add(txtEmailCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 130, 330, 30));
-
-        lblSexoCliente.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
-        lblSexoCliente.setText("Sexo:");
-        panelContainer.add(lblSexoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 110, -1, -1));
-
-        cbxSexoCliente.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
-        cbxSexoCliente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione um gênero", "Masculino", "Feminino", "Outros", " " }));
-        panelContainer.add(cbxSexoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 130, 190, 30));
-
-        lblTelefoneCliente.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
-        lblTelefoneCliente.setText("Telefone:");
-        panelContainer.add(lblTelefoneCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 110, -1, -1));
-
-        try {
-            formatTelefoneCliente.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) ####-####")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        formatTelefoneCliente.setFont(new java.awt.Font("Courier New", 0, 12)); // NOI18N
-        panelContainer.add(formatTelefoneCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 130, 130, 30));
-
-        lblCelularCliente.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
-        lblCelularCliente.setText("Celular:");
-        panelContainer.add(lblCelularCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 110, -1, -1));
-
-        try {
-            formatCelularCliente.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) #-####-####")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        formatCelularCliente.setFont(new java.awt.Font("Courier New", 0, 12)); // NOI18N
-        panelContainer.add(formatCelularCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 130, 170, 30));
-
-        panelSidebarTop.setBackground(new java.awt.Color(15, 76, 117));
-
-        jLabel11.setFont(new java.awt.Font("Courier New", 1, 36)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(190, 190, 190));
-        jLabel11.setText("Cadastro de Cliente");
-
-        javax.swing.GroupLayout panelSidebarTopLayout = new javax.swing.GroupLayout(panelSidebarTop);
-        panelSidebarTop.setLayout(panelSidebarTopLayout);
-        panelSidebarTopLayout.setHorizontalGroup(
-            panelSidebarTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelSidebarTopLayout.createSequentialGroup()
-                .addGap(101, 101, 101)
-                .addComponent(jLabel11)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        panelSidebarTopLayout.setVerticalGroup(
-            panelSidebarTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelSidebarTopLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
-        );
-
-        btnLimparCadastro.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
-        btnLimparCadastro.setText("Limpar");
-        btnLimparCadastro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLimparCadastroActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout panelBgLayout = new javax.swing.GroupLayout(panelBg);
         panelBg.setLayout(panelBgLayout);
         panelBgLayout.setHorizontalGroup(
             panelBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(panelSidebarTop, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(panelBgLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(panelBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panelSidebarTop, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(panelBgLayout.createSequentialGroup()
-                        .addGap(55, 55, 55)
-                        .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(50, 50, 50)
-                        .addComponent(btnSalvar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnLimparCadastro)
-                        .addGap(40, 40, 40)
-                        .addComponent(btnEditarCliente)
-                        .addGap(40, 40, 40)
-                        .addComponent(btnRemoverCliente)
-                        .addGap(40, 40, 40)
-                        .addComponent(btnCancelarCadastro)
-                        .addGap(71, 71, 71))
-                    .addGroup(panelBgLayout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(panelContainer, javax.swing.GroupLayout.PREFERRED_SIZE, 1279, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 56, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelBgLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(panelTabelaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                .addGap(50, 50, 50)
+                .addGroup(panelBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(separadorBotoesDown)
+                    .addComponent(panelTabelaCliente, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(panelContainer, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(separadorBotoesUp)
+                    .addComponent(panelBotoesCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(50, 50, 50))
         );
-
-        panelBgLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnCadastrar, btnCancelarCadastro, btnEditarCliente, btnLimparCadastro, btnRemoverCliente, btnSalvar});
-
         panelBgLayout.setVerticalGroup(
             panelBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelBgLayout.createSequentialGroup()
-                .addComponent(panelSidebarTop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(panelSidebarTop, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(panelContainer, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(panelBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnEditarCliente)
-                        .addComponent(btnRemoverCliente)
-                        .addComponent(btnCancelarCadastro)
-                        .addComponent(btnLimparCadastro))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnSalvar)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addGap(20, 20, 20)
+                .addComponent(separadorBotoesUp, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panelBotoesCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(separadorBotoesDown, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
                 .addComponent(panelTabelaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(68, 68, 68))
+                .addGap(20, 20, 20))
         );
-
-        panelBgLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnCadastrar, btnCancelarCadastro, btnEditarCliente, btnLimparCadastro, btnRemoverCliente, btnSalvar});
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -330,52 +420,66 @@ public class TelaCliente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
-       String idCliente = txtIdCliente.getText();
+        String idCliente = txtIdCliente.getText();
         String nomeCliente = txtNomeCliente.getText();
         String enderecoCliente = txtEnderecoCliente.getText();
         String cpfCliente = formatCpfCliente.getText();
         String emailCliente = txtEmailCliente.getText();
         String telCliente = formatTelefoneCliente.getText();
-        
-        
 
         if (cbxSexoCliente.getSelectedIndex() == 0) {
             JOptionPane.showMessageDialog(this, "Selecione o sexo do cliente! ", "Aviso", JOptionPane.WARNING_MESSAGE);
         }
-        
+
         DefaultTableModel dtmClientes = (DefaultTableModel) tbClientes.getModel();
         dtmClientes.addRow(new Object[]{
             idCliente,
             nomeCliente,
             cpfCliente,
-            enderecoCliente,  
-            emailCliente,   
-            telCliente, 
-        });
+            enderecoCliente,
+            emailCliente,
+            telCliente,});
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
     private void btnCancelarCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarCadastroActionPerformed
-        System.exit(0);
+        this.setVisible(false);
     }//GEN-LAST:event_btnCancelarCadastroActionPerformed
 
     private void btnRemoverClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverClienteActionPerformed
-    
-        DefaultTableModel dtmClientes = (DefaultTableModel)tbClientes.getModel();
-        if (tbClientes.getSelectedRow() >= 0){
-            dtmClientes.removeRow(tbClientes.getSelectedRow());
-            tbClientes.setModel(dtmClientes);
-        }else{
-            JOptionPane.showMessageDialog(null, "Favor selecionar uma linha");
+        DefaultTableModel dtmClientes = (DefaultTableModel) tbClientes.getModel();
+        
+        
+        boolean resultadoRemove = false;
+
+        try {
+            if (tbClientes.getSelectedRow() >= 0) {
+                dtmClientes.removeRow(tbClientes.getSelectedRow());
+                tbClientes.setModel(dtmClientes);
+                resultadoRemove = true;
+            } else {
+                JOptionPane.showMessageDialog(null, "Favor selecionar uma linha");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Erro ao remover o cliente, tente novamente!", "Erro", JOptionPane.ERROR);
+        } finally {
+            if (resultadoRemove == true) {
+                JOptionPane.showMessageDialog(this, "Cliente removido com sucesso!", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+            }
         }
+
+
     }//GEN-LAST:event_btnRemoverClienteActionPerformed
 
     private void btnLimparCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparCadastroActionPerformed
         limparCadastro();
     }//GEN-LAST:event_btnLimparCadastroActionPerformed
-    
-    
+
+    private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+        validate();
+    }//GEN-LAST:event_btnSalvarActionPerformed
+
     //Metodo para Limpar Cadastro Cliente
-    private void limparCadastro(){
+    private void limparCadastro() {
         txtIdCliente.setText("");
         txtNomeCliente.setText("");
         txtEnderecoCliente.setText("");
@@ -385,8 +489,7 @@ public class TelaCliente extends javax.swing.JFrame {
         formatTelefoneCliente.setText("");
         formatCelularCliente.setText("");
     }
-    
-    
+
     /**
      * @param args the command line arguments
      */
@@ -436,20 +539,27 @@ public class TelaCliente extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField formatCelularCliente;
     private javax.swing.JFormattedTextField formatCpfCliente;
     private javax.swing.JFormattedTextField formatTelefoneCliente;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JLabel lblCadastroCliente;
     private javax.swing.JLabel lblCelularCliente;
     private javax.swing.JLabel lblCpfCliente;
     private javax.swing.JLabel lblEmailCliente;
     private javax.swing.JLabel lblEnderecoCliente;
     private javax.swing.JLabel lblID;
+    private javax.swing.JLabel lblLineProduto;
+    private javax.swing.JLabel lblLojaRoupaLogoProduto;
     private javax.swing.JLabel lblNomeCliente;
     private javax.swing.JLabel lblSexoCliente;
     private javax.swing.JLabel lblTelefoneCliente;
     private javax.swing.JPanel panelBg;
+    private javax.swing.JPanel panelBotoesCliente;
     private javax.swing.JPanel panelContainer;
+    private javax.swing.JPanel panelLineFullLogoProduto;
+    private javax.swing.JPanel panelLogoProduto;
     private javax.swing.JPanel panelSidebarTop;
     private javax.swing.JPanel panelTabelaCliente;
+    private javax.swing.JSeparator separadorBotoesDown;
+    private javax.swing.JSeparator separadorBotoesUp;
     private javax.swing.JScrollPane spanelClientes;
     private javax.swing.JTable tbClientes;
     private javax.swing.JTextField txtEmailCliente;
