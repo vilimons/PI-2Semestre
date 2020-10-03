@@ -85,6 +85,8 @@ public class TelaProduto extends javax.swing.JFrame {
         setTitle("Cadastrar Produto");
         setResizable(false);
 
+        panelBg.setBackground(new java.awt.Color(224, 224, 224));
+
         panelSidebarTop.setBackground(new java.awt.Color(15, 76, 117));
 
         panelLogoProduto.setBackground(new java.awt.Color(15, 76, 117));
@@ -94,8 +96,8 @@ public class TelaProduto extends javax.swing.JFrame {
 
         lblLojaRoupaLogoProduto.setFont(new java.awt.Font("Old English Text MT", 1, 48)); // NOI18N
         lblLojaRoupaLogoProduto.setForeground(new java.awt.Color(190, 176, 40));
-        lblLojaRoupaLogoProduto.setText("Loja-Roupa");
-        panelLogoProduto.add(lblLojaRoupaLogoProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 290, 41));
+        lblLojaRoupaLogoProduto.setText("Synthesia");
+        panelLogoProduto.add(lblLojaRoupaLogoProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 230, 41));
 
         lblLineProduto.setBackground(new java.awt.Color(190, 190, 190));
         lblLineProduto.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -127,11 +129,11 @@ public class TelaProduto extends javax.swing.JFrame {
         panelSidebarTopLayout.setHorizontalGroup(
             panelSidebarTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelSidebarTopLayout.createSequentialGroup()
-                .addGap(15, 15, 15)
+                .addGap(52, 52, 52)
                 .addComponent(panelLogoProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblCadastroProduto)
-                .addGap(50, 50, 50))
+                .addGap(53, 53, 53))
         );
         panelSidebarTopLayout.setVerticalGroup(
             panelSidebarTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -183,10 +185,10 @@ public class TelaProduto extends javax.swing.JFrame {
         lblValorProduto.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
         lblValorProduto.setForeground(new java.awt.Color(27, 38, 44));
         lblValorProduto.setText("Valor:");
-        panelDadosGerais.add(lblValorProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 130, -1, -1));
+        panelDadosGerais.add(lblValorProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 130, -1, -1));
 
         txtValorProduto.setForeground(new java.awt.Color(27, 38, 44));
-        panelDadosGerais.add(txtValorProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 150, 130, 30));
+        panelDadosGerais.add(txtValorProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 150, 130, 30));
 
         lblDescricaoProduto.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
         lblDescricaoProduto.setForeground(new java.awt.Color(27, 38, 44));
@@ -204,7 +206,7 @@ public class TelaProduto extends javax.swing.JFrame {
                 btnArquivoActionPerformed(evt);
             }
         });
-        panelDadosGerais.add(btnArquivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 150, -1, 30));
+        panelDadosGerais.add(btnArquivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 150, -1, 30));
 
         lblImagemProduto.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
         lblImagemProduto.setForeground(new java.awt.Color(27, 38, 44));
@@ -214,7 +216,7 @@ public class TelaProduto extends javax.swing.JFrame {
         txtArquivoImagem.setEditable(false);
         txtArquivoImagem.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
         txtArquivoImagem.setForeground(new java.awt.Color(27, 38, 44));
-        panelDadosGerais.add(txtArquivoImagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 150, 240, 30));
+        panelDadosGerais.add(txtArquivoImagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 150, 240, 30));
 
         lblImagem.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         panelDadosGerais.add(lblImagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 90, 170, 110));
@@ -231,12 +233,14 @@ public class TelaProduto extends javax.swing.JFrame {
 
         tabPaneCadastroProduto.addTab("Geral", panelDadosGerais);
 
+        panelImagemMaior.setBackground(new java.awt.Color(224, 224, 224));
         panelImagemMaior.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(15, 76, 117), 1, true));
 
         lblImagemProdutoTeste.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
         lblImagemProdutoTeste.setForeground(new java.awt.Color(27, 38, 44));
         lblImagemProdutoTeste.setText("Selecione uma imagem:");
 
+        btnArquivoTeste.setBackground(new java.awt.Color(224, 224, 224));
         btnArquivoTeste.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         btnArquivoTeste.setForeground(new java.awt.Color(27, 38, 44));
         btnArquivoTeste.setText("Arquivo");
@@ -252,6 +256,7 @@ public class TelaProduto extends javax.swing.JFrame {
 
         lblImagemTeste.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         lblImagemTeste.setToolTipText("Imagem do Produto");
+        lblImagemTeste.setDoubleBuffered(true);
 
         javax.swing.GroupLayout panelImagemMaiorLayout = new javax.swing.GroupLayout(panelImagemMaior);
         panelImagemMaior.setLayout(panelImagemMaiorLayout);
@@ -264,38 +269,39 @@ public class TelaProduto extends javax.swing.JFrame {
                 .addComponent(txtArquivoImagemTeste, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnArquivoTeste)
-                .addGap(97, 97, 97)
-                .addComponent(lblImagemTeste, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(161, 161, 161)
+                .addComponent(lblImagemTeste, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(280, Short.MAX_VALUE))
         );
         panelImagemMaiorLayout.setVerticalGroup(
             panelImagemMaiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelImagemMaiorLayout.createSequentialGroup()
-                .addGroup(panelImagemMaiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelImagemMaiorLayout.createSequentialGroup()
-                        .addGap(90, 90, 90)
-                        .addGroup(panelImagemMaiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblImagemProdutoTeste)
-                            .addComponent(btnArquivoTeste, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtArquivoImagemTeste, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(panelImagemMaiorLayout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(lblImagemTeste, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(29, 29, 29))
+                .addGap(90, 90, 90)
+                .addGroup(panelImagemMaiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblImagemProdutoTeste)
+                    .addComponent(btnArquivoTeste, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtArquivoImagemTeste, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(lblImagemTeste, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         tabPaneCadastroProduto.addTab("\"Imagem Maior\"", panelImagemMaior);
 
+        panelBotoesProduto.setBackground(new java.awt.Color(224, 224, 224));
+
+        btnSalvar.setBackground(new java.awt.Color(224, 224, 224));
         btnSalvar.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         btnSalvar.setForeground(new java.awt.Color(27, 38, 44));
         btnSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_save_24px.png"))); // NOI18N
         btnSalvar.setText("Salvar");
 
+        btnEditarProduto.setBackground(new java.awt.Color(224, 224, 224));
         btnEditarProduto.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         btnEditarProduto.setForeground(new java.awt.Color(27, 38, 44));
         btnEditarProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_edit_24px.png"))); // NOI18N
         btnEditarProduto.setText("Editar");
 
+        btnCadastrar.setBackground(new java.awt.Color(224, 224, 224));
         btnCadastrar.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         btnCadastrar.setForeground(new java.awt.Color(27, 38, 44));
         btnCadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_registration_24px.png"))); // NOI18N
@@ -306,6 +312,7 @@ public class TelaProduto extends javax.swing.JFrame {
             }
         });
 
+        btnLimparCadastro.setBackground(new java.awt.Color(224, 224, 224));
         btnLimparCadastro.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         btnLimparCadastro.setForeground(new java.awt.Color(27, 38, 44));
         btnLimparCadastro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_broom_24px.png"))); // NOI18N
@@ -316,6 +323,7 @@ public class TelaProduto extends javax.swing.JFrame {
             }
         });
 
+        btnRemoverProduto.setBackground(new java.awt.Color(224, 224, 224));
         btnRemoverProduto.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         btnRemoverProduto.setForeground(new java.awt.Color(27, 38, 44));
         btnRemoverProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_trash_24px.png"))); // NOI18N
@@ -326,6 +334,7 @@ public class TelaProduto extends javax.swing.JFrame {
             }
         });
 
+        btnCancelarCadastro.setBackground(new java.awt.Color(224, 224, 224));
         btnCancelarCadastro.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         btnCancelarCadastro.setForeground(new java.awt.Color(27, 38, 44));
         btnCancelarCadastro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_cancel_24px.png"))); // NOI18N
@@ -436,13 +445,14 @@ public class TelaProduto extends javax.swing.JFrame {
             .addGroup(panelBgLayout.createSequentialGroup()
                 .addGap(50, 50, 50)
                 .addGroup(panelBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(panelBgLayout.createSequentialGroup()
-                        .addComponent(separadorBotoesUp)
-                        .addGap(1, 1, 1))
                     .addComponent(separadorBotoesDown)
-                    .addComponent(tabPaneCadastroProduto)
                     .addComponent(panelTabelaProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(panelBotoesProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(panelBotoesProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelBgLayout.createSequentialGroup()
+                        .addGroup(panelBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(tabPaneCadastroProduto, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(separadorBotoesUp))
+                        .addGap(1, 1, 1)))
                 .addContainerGap(50, Short.MAX_VALUE))
             .addComponent(panelSidebarTop, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -460,7 +470,7 @@ public class TelaProduto extends javax.swing.JFrame {
                 .addComponent(separadorBotoesDown, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20)
                 .addComponent(panelTabelaProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -471,9 +481,7 @@ public class TelaProduto extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(panelBg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20))
+            .addComponent(panelBg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();

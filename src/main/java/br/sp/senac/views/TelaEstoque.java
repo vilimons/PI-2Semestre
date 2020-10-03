@@ -7,14 +7,14 @@ package br.sp.senac.views;
 
 /**
  *
- * @author Vitor Lima Brandão
+ * @author sKm
  */
-public class TelaRelatorio extends javax.swing.JFrame {
+public class TelaEstoque extends javax.swing.JFrame {
 
     /**
-     * Creates new form TelaRelatorio
+     * Creates new form TelaEstoque
      */
-    public TelaRelatorio() {
+    public TelaEstoque() {
         initComponents();
         this.setLocationRelativeTo(null);
     }
@@ -29,19 +29,19 @@ public class TelaRelatorio extends javax.swing.JFrame {
     private void initComponents() {
 
         panelBg = new javax.swing.JPanel();
-        btnCancelarRelatorio = new javax.swing.JButton();
+        btnCancelarEstoque = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         panelBg.setBackground(new java.awt.Color(224, 224, 224));
 
-        btnCancelarRelatorio.setBackground(new java.awt.Color(224, 224, 224));
-        btnCancelarRelatorio.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
-        btnCancelarRelatorio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_cancel_48px.png"))); // NOI18N
-        btnCancelarRelatorio.setText("Cancelar");
-        btnCancelarRelatorio.addActionListener(new java.awt.event.ActionListener() {
+        btnCancelarEstoque.setBackground(new java.awt.Color(224, 224, 224));
+        btnCancelarEstoque.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        btnCancelarEstoque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_cancel_48px.png"))); // NOI18N
+        btnCancelarEstoque.setText("Cancelar");
+        btnCancelarEstoque.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCancelarRelatorioActionPerformed(evt);
+                btnCancelarEstoqueActionPerformed(evt);
             }
         });
 
@@ -51,14 +51,14 @@ public class TelaRelatorio extends javax.swing.JFrame {
             panelBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelBgLayout.createSequentialGroup()
                 .addContainerGap(1079, Short.MAX_VALUE)
-                .addComponent(btnCancelarRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnCancelarEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         panelBgLayout.setVerticalGroup(
             panelBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelBgLayout.createSequentialGroup()
                 .addContainerGap(676, Short.MAX_VALUE)
-                .addComponent(btnCancelarRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnCancelarEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -76,9 +76,9 @@ public class TelaRelatorio extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnCancelarRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarRelatorioActionPerformed
+    private void btnCancelarEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarEstoqueActionPerformed
         this.setVisible(false);
-    }//GEN-LAST:event_btnCancelarRelatorioActionPerformed
+    }//GEN-LAST:event_btnCancelarEstoqueActionPerformed
 
     /**
      * @param args the command line arguments
@@ -97,27 +97,26 @@ public class TelaRelatorio extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaRelatorio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaEstoque.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaRelatorio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaEstoque.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaRelatorio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaEstoque.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaRelatorio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaEstoque.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaRelatorio().setVisible(true);
+                new TelaEstoque().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCancelarRelatorio;
+    private javax.swing.JButton btnCancelarEstoque;
     private javax.swing.JPanel panelBg;
     // End of variables declaration//GEN-END:variables
 }
