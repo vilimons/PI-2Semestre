@@ -5,6 +5,11 @@
  */
 package br.sp.senac.views;
 
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.net.URL;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -20,6 +25,19 @@ public class TelaPrincipal extends javax.swing.JFrame {
     public TelaPrincipal() {
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
+
+        // Setando Icone Janela
+        
+        URL IconRoute = getClass().getResource("/IconLogo-S.png");
+        Image IconWindow = Toolkit.getDefaultToolkit().getImage(IconRoute);
+        this.setIconImage(IconWindow);
+
+        //Editar Header e Body Tabela Vendas
+        tbVendas.getTableHeader().setFont(new Font("Sagoe UI", Font.BOLD, 13));
+        tbVendas.getTableHeader().setOpaque(false);
+        tbVendas.getTableHeader().setBackground(new Color(15, 76, 117));
+        tbVendas.getTableHeader().setForeground(new Color(190, 190, 190));
+        tbVendas.setRowHeight(25);
     }
 
     /**
@@ -139,7 +157,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         tbVendas.setForeground(new java.awt.Color(190, 190, 190));
         tbVendas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"14:58:02",  new Integer(3454), "Casaco Couro", "Casaco couro M",  new Double(350.0),  new Double(350.0)},
+                {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -157,16 +175,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 "Horario", "ID", "Nome Produto", "Descrição", "Valor Unitário", "Subtotal"
             }
         ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Double.class, java.lang.Double.class
-            };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false, false
             };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
@@ -174,10 +185,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         tbVendas.setToolTipText("");
         tbVendas.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
+        tbVendas.setFocusable(false);
         tbVendas.setGridColor(new java.awt.Color(51, 51, 51));
+        tbVendas.setIntercellSpacing(new java.awt.Dimension(0, 0));
         tbVendas.setName("tbVendas"); // NOI18N
         tbVendas.setShowHorizontalLines(false);
         tbVendas.setShowVerticalLines(false);
+        tbVendas.getTableHeader().setReorderingAllowed(false);
         tbVendas.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentResized(java.awt.event.ComponentEvent evt) {
                 tbVendasComponentResized(evt);
@@ -718,16 +732,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_panelCadastroClienteMouseClicked
 
     private void panelEstoqueVendasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelEstoqueVendasMouseClicked
-        
+
         TelaEstoque newTela = new TelaEstoque();
         newTela.setVisible(true);
     }//GEN-LAST:event_panelEstoqueVendasMouseClicked
 
     private void btnRemoverItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverItemActionPerformed
         DefaultTableModel dtmCarrinho = (DefaultTableModel) tbVendas.getModel();
-        
+
         boolean resultadoRemove = false;
-        
+
         try {
             if (tbVendas.getSelectedRow() >= 0) {
                 dtmCarrinho.removeRow(tbVendas.getSelectedRow());
@@ -746,7 +760,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRemoverItemActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-      System.exit(0);
+        System.exit(0);
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     /**

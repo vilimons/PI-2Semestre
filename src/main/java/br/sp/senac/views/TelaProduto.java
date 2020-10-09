@@ -6,8 +6,11 @@
 package br.sp.senac.views;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Image;
+import java.awt.Toolkit;
 import java.io.File;
+import java.net.URL;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
@@ -27,6 +30,18 @@ public class TelaProduto extends javax.swing.JFrame {
     public TelaProduto() {
         initComponents();
         this.setLocationRelativeTo(null);
+
+        // Setando Icone Janela
+        URL IconRoute = getClass().getResource("/IconLogo-S.png");
+        Image IconWindow = Toolkit.getDefaultToolkit().getImage(IconRoute);
+        this.setIconImage(IconWindow);
+
+        //Editar Header e Body Tabela Produto
+        tbProdutos.getTableHeader().setFont(new Font("Sagoe UI", Font.BOLD, 13));
+        tbProdutos.getTableHeader().setOpaque(false);
+        tbProdutos.getTableHeader().setBackground(new Color(15, 76, 117));
+        tbProdutos.getTableHeader().setForeground(new Color(190, 190, 190));
+        tbProdutos.setRowHeight(25);
     }
 
     /**
@@ -384,7 +399,9 @@ public class TelaProduto extends javax.swing.JFrame {
 
         panelTabelaProdutos.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(15, 76, 117), 1, true));
 
+        tbProdutos.setBackground(new java.awt.Color(27, 38, 44));
         tbProdutos.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
+        tbProdutos.setForeground(new java.awt.Color(190, 190, 190));
         tbProdutos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -393,23 +410,21 @@ public class TelaProduto extends javax.swing.JFrame {
                 "ID", "Nome", "Descrição", "Tipo", "Valor"
             }
         ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false
             };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
         tbProdutos.setToolTipText("Tabela Produtos");
+        tbProdutos.setFocusable(false);
+        tbProdutos.setIntercellSpacing(new java.awt.Dimension(0, 0));
+        tbProdutos.setRowHeight(25);
         tbProdutos.setShowHorizontalLines(false);
+        tbProdutos.setShowVerticalLines(false);
+        tbProdutos.getTableHeader().setReorderingAllowed(false);
         spanelProdutos.setViewportView(tbProdutos);
         if (tbProdutos.getColumnModel().getColumnCount() > 0) {
             tbProdutos.getColumnModel().getColumn(0).setResizable(false);
@@ -535,7 +550,7 @@ public class TelaProduto extends javax.swing.JFrame {
             }
 
         }
-        
+
     }//GEN-LAST:event_btnRemoverProdutoActionPerformed
 
     private void btnLimparCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparCadastroActionPerformed
@@ -573,8 +588,8 @@ public class TelaProduto extends javax.swing.JFrame {
     }//GEN-LAST:event_btnArquivoActionPerformed
 
     private void btnArquivoTesteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArquivoTesteActionPerformed
-        
-         // Buscar Imagem com FileChooser
+
+        // Buscar Imagem com FileChooser
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setDialogTitle("Procurar arquivo de imagem");
         fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
@@ -600,9 +615,8 @@ public class TelaProduto extends javax.swing.JFrame {
 
             lblImagemTeste.setIcon(new ImageIcon(image.getScaledInstance(lblImagemTeste.getWidth(), lblImagemTeste.getHeight(), Image.SCALE_DEFAULT)));
         }
-        
-        
-        
+
+
     }//GEN-LAST:event_btnArquivoTesteActionPerformed
 
     private void limparCadastro() {
@@ -615,7 +629,8 @@ public class TelaProduto extends javax.swing.JFrame {
         lblImagem.setIcon(null);
         lblImagemTeste.setIcon(null);
         txtArquivoImagemTeste.setText("");
-        
+        cbxTamanhoProduto.setSelectedIndex(0);
+
     }
 
     /**

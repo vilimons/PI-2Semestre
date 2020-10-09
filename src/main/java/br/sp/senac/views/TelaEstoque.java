@@ -5,6 +5,10 @@
  */
 package br.sp.senac.views;
 
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.net.URL;
+
 /**
  *
  * @author sKm
@@ -17,6 +21,12 @@ public class TelaEstoque extends javax.swing.JFrame {
     public TelaEstoque() {
         initComponents();
         this.setLocationRelativeTo(null);
+
+        // Setando Icone Janela
+        
+        URL IconRoute = getClass().getResource("/IconLogo-S.png");
+        Image IconWindow = Toolkit.getDefaultToolkit().getImage(IconRoute);
+        this.setIconImage(IconWindow);
     }
 
     /**
