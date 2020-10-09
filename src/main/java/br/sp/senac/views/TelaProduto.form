@@ -232,6 +232,9 @@
           <SubComponents>
             <Container class="javax.swing.JPanel" name="panelDadosGerais">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="e0" green="e0" red="e0" type="rgb"/>
+                </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder roundedCorners="true">
@@ -276,7 +279,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="2c" green="26" red="1b" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Nome:"/>
+                    <Property name="text" type="java.lang.String" value="Nome:*"/>
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -322,7 +325,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="2c" green="26" red="1b" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Tipo:"/>
+                    <Property name="text" type="java.lang.String" value="Tipo:*"/>
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -366,7 +369,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="2c" green="26" red="1b" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Valor:"/>
+                    <Property name="text" type="java.lang.String" value="Valor:*"/>
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -394,7 +397,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="2c" green="26" red="1b" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Descri&#xe7;&#xe3;o:"/>
+                    <Property name="text" type="java.lang.String" value="Descri&#xe7;&#xe3;o:*"/>
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -451,7 +454,6 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtArquivoImagem">
                   <Properties>
-                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Courier New" size="14" style="0"/>
                     </Property>
@@ -485,7 +487,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="2c" green="26" red="1b" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Tamanho:"/>
+                    <Property name="text" type="java.lang.String" value="Tamanho:*"/>
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">

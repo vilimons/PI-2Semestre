@@ -453,14 +453,14 @@ public class TelaCliente extends javax.swing.JFrame {
         String emailCliente = txtEmailCliente.getText();
         String celCliente = formatCelularCliente.getText();
 
-        // Validação de campos simples
+        // Validação de campos simples e agrupada CLIENTE ( sem detalhes das tratativas )
         try {
             if ((cbxSexoCliente.getSelectedIndex() != 0)
                     && (txtNomeCliente.getText().length() > 5)
                     && (txtEnderecoCliente.getText().length() > 10)
-                    && (formatCpfCliente.getText().length() > 0)
-                    && (txtEmailCliente.getText().length() > 0)
-                    && (formatCelularCliente.getText().length() > 0)) {
+                    && (formatCpfCliente.getText().length() == 11)
+                    && (txtEmailCliente.getText().length() > 10)
+                    && (formatCelularCliente.getText().length() > 11)) {
                 
                 JOptionPane.showMessageDialog(this, "Cadastro realizado com sucesso! ", "Aviso", JOptionPane.WARNING_MESSAGE);
                 

@@ -166,6 +166,7 @@ public class TelaProduto extends javax.swing.JFrame {
         tabPaneCadastroProduto.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
         tabPaneCadastroProduto.setName(""); // NOI18N
 
+        panelDadosGerais.setBackground(new java.awt.Color(224, 224, 224));
         panelDadosGerais.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(15, 76, 117), 1, true));
         panelDadosGerais.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -176,7 +177,7 @@ public class TelaProduto extends javax.swing.JFrame {
 
         lblNomeProduto.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
         lblNomeProduto.setForeground(new java.awt.Color(27, 38, 44));
-        lblNomeProduto.setText("Nome:");
+        lblNomeProduto.setText("Nome:*");
         panelDadosGerais.add(lblNomeProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(323, 19, -1, -1));
 
         txtNomeProduto.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
@@ -189,7 +190,7 @@ public class TelaProduto extends javax.swing.JFrame {
 
         lblTipoProduto.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
         lblTipoProduto.setForeground(new java.awt.Color(27, 38, 44));
-        lblTipoProduto.setText("Tipo:");
+        lblTipoProduto.setText("Tipo:*");
         panelDadosGerais.add(lblTipoProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, -1, -1));
 
         cbxTipoProduto.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
@@ -199,7 +200,7 @@ public class TelaProduto extends javax.swing.JFrame {
 
         lblValorProduto.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
         lblValorProduto.setForeground(new java.awt.Color(27, 38, 44));
-        lblValorProduto.setText("Valor:");
+        lblValorProduto.setText("Valor:*");
         panelDadosGerais.add(lblValorProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 130, -1, -1));
 
         txtValorProduto.setForeground(new java.awt.Color(27, 38, 44));
@@ -207,7 +208,7 @@ public class TelaProduto extends javax.swing.JFrame {
 
         lblDescricaoProduto.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
         lblDescricaoProduto.setForeground(new java.awt.Color(27, 38, 44));
-        lblDescricaoProduto.setText("Descrição:");
+        lblDescricaoProduto.setText("Descrição:*");
         panelDadosGerais.add(lblDescricaoProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(676, 20, -1, -1));
 
         txtDescricaoProduto.setForeground(new java.awt.Color(27, 38, 44));
@@ -228,7 +229,6 @@ public class TelaProduto extends javax.swing.JFrame {
         lblImagemProduto.setText("Selecione uma imagem:");
         panelDadosGerais.add(lblImagemProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 120, -1, -1));
 
-        txtArquivoImagem.setEditable(false);
         txtArquivoImagem.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
         txtArquivoImagem.setForeground(new java.awt.Color(27, 38, 44));
         panelDadosGerais.add(txtArquivoImagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 150, 240, 30));
@@ -238,7 +238,7 @@ public class TelaProduto extends javax.swing.JFrame {
 
         lblTamanhoProduto.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
         lblTamanhoProduto.setForeground(new java.awt.Color(27, 38, 44));
-        lblTamanhoProduto.setText("Tamanho:");
+        lblTamanhoProduto.setText("Tamanho:*");
         panelDadosGerais.add(lblTamanhoProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 20, -1, -1));
 
         cbxTamanhoProduto.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
@@ -507,21 +507,29 @@ public class TelaProduto extends javax.swing.JFrame {
         String nomeProduto = txtNomeProduto.getText();
         String descricaoProduto = txtDescricaoProduto.getText();
         String valorProduto = txtValorProduto.getText();
-
+        
+        // Validação de campos simples e agrupada PRODUTO( sem detalhes das tratativas )
         try {
-            if (cbxTipoProduto.getSelectedIndex() == 0) {
-                JOptionPane.showMessageDialog(this, "Selecione um tipo de produto! ", "Aviso", JOptionPane.WARNING_MESSAGE);
+            if ((cbxTipoProduto.getSelectedIndex() != 0)
+                    &&(txtNomeProduto.getText().length() > 5)
+                    &&(txtDescricaoProduto.getText().length() > 5)
+                    &&(txtValorProduto.getText().length() > 0)) {
+
+                JOptionPane.showMessageDialog(this, "Cadastro realizado com sucesso! ", "Aviso", JOptionPane.WARNING_MESSAGE);
+
+                DefaultTableModel dtmProdutos = (DefaultTableModel) tbProdutos.getModel();
+                dtmProdutos.addRow(new Object[]{
+                    idProduto,
+                    nomeProduto,
+                    descricaoProduto,
+                    cbxTipoProduto.getSelectedItem().toString(),
+                    valorProduto,});
+            }else{
+                JOptionPane.showMessageDialog(this, "Alguns campos não foram preenchidos corretamente! ", "Aviso", JOptionPane.WARNING_MESSAGE);
             }
 
-            DefaultTableModel dtmProdutos = (DefaultTableModel) tbProdutos.getModel();
-            dtmProdutos.addRow(new Object[]{
-                idProduto,
-                nomeProduto,
-                descricaoProduto,
-                cbxTipoProduto.getSelectedItem().toString(),
-                valorProduto,});
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Erro" + JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Erro ao cadastrar o produto!", "Erro", JOptionPane.ERROR_MESSAGE);
         }
 
 
