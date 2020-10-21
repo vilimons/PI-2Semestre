@@ -196,6 +196,11 @@ public class TelaProduto extends javax.swing.JFrame {
         cbxTipoProduto.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
         cbxTipoProduto.setForeground(new java.awt.Color(27, 38, 44));
         cbxTipoProduto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione um tipo de produto", "Bonés", "Camisetas", "Blusas", "Shorts", "Calças" }));
+        cbxTipoProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxTipoProdutoActionPerformed(evt);
+            }
+        });
         panelDadosGerais.add(cbxTipoProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, -1, 30));
 
         lblValorProduto.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
@@ -626,6 +631,10 @@ public class TelaProduto extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_btnArquivoTesteActionPerformed
+
+    private void cbxTipoProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxTipoProdutoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxTipoProdutoActionPerformed
 
     private void limparCadastro() {
         txtIdProduto.setText("");
